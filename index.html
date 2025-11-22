@@ -1,557 +1,247 @@
-:root {
-  --color-bg: #0c0b17;
-  --color-primary: #1ab76c;
-  --color-primary-dark: #119155;
-  --color-secondary: #ffffff;
-  --color-text-main: #111827;
-  --color-text-muted: #6b7280;
-  --color-card-bg: #ffffff;
-  --color-border: #e5e7eb;
-  --radius-lg: 16px;
-  --radius-md: 12px;
-  --radius-sm: 8px;
-  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.15);
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
-  color: var(--color-text-main);
-  background-color: #f3f4f6;
-}
-
-/* Utilities */
-.container {
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font-family: inherit;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-/* Top banner */
-.top-banner {
-  background: #111827;
-  color: #e5e7eb;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 0.6rem 1rem;
-  font-size: 0.9rem;
-}
-
-.top-banner__btn {
-  padding: 0.35rem 0.9rem;
-  border-radius: 999px;
-  border: 1px solid #e5e7eb33;
-  color: #f9fafb;
-  font-size: 0.8rem;
-}
-
-/* Header */
-.header {
-  background: #0b1020;
-  color: white;
-  padding-bottom: 0.25rem;
-  box-shadow: 0 1px 0 rgba(148, 163, 184, 0.25);
-}
-
-.header__inner {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 0.9rem 1rem 0.9rem;
-}
-
-.header__logo {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.logo-main {
-  font-weight: 700;
-  font-size: 1.3rem;
-  letter-spacing: 0.02em;
-}
-
-.logo-country {
-  font-size: 0.75rem;
-  color: #9ca3af;
-}
-
-.header__search {
-  flex: 1;
-}
-
-.search-input {
-  display: flex;
-  align-items: center;
-  background: #111827;
-  border-radius: 999px;
-  padding: 0.35rem 0.9rem;
-  border: 1px solid #1f2937;
-}
-
-.search-input__icon {
-  margin-right: 0.5rem;
-  font-size: 1rem;
-}
-
-.search-input input {
-  flex: 1;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: #e5e7eb;
-  font-size: 0.9rem;
-}
-
-.header__actions {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.icon-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 999px;
-  background: #111827;
-  border: 1px solid #1f2937;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.btn-primary,
-.btn-secondary,
-.btn-outline,
-.btn-light {
-  border-radius: 999px;
-  font-size: 0.85rem;
-  padding: 0.45rem 0.95rem;
-  font-weight: 500;
-}
-
-.btn-primary {
-  background: var(--color-primary);
-  color: #0f172a;
-}
-
-.btn-primary:hover {
-  background: var(--color-primary-dark);
-}
-
-.btn-outline {
-  border: 1px solid #4b5563;
-  color: #e5e7eb;
-}
-
-.btn-light {
-  background: #f9fafb;
-  color: #111827;
-}
-
-.btn-secondary {
-  background: #111827;
-  color: #f9fafb;
-}
-
-/* Nav categorías */
-.nav-categories {
-  background: #0b1020;
-}
-
-.nav-categories__inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-  padding-bottom: 0.7rem;
-}
-
-.nav-categories__item {
-  padding: 0.3rem 0.75rem;
-  font-size: 0.86rem;
-  border-radius: 999px;
-  background: #111827;
-  color: #e5e7eb;
-  border: 1px solid #1f2937;
-}
-
-.nav-categories__item--active {
-  background: #f9fafb;
-  color: #111827;
-}
-
-/* Hero */
-.hero {
-  background: radial-gradient(circle at top left, #1d293b 0, #020617 55%);
-  color: #f9fafb;
-  padding: 2rem 0 2.6rem;
-}
-
-.hero__inner {
-  display: grid;
-  grid-template-columns: minmax(0, 2fr) minmax(0, 1.3fr);
-  gap: 2.5rem;
-  align-items: center;
-}
-
-.hero__content h1 {
-  font-size: clamp(1.9rem, 3vw, 2.4rem);
-  margin-bottom: 0.6rem;
-}
-
-.hero__content p {
-  max-width: 480px;
-  color: #e5e7eb;
-  font-size: 0.95rem;
-}
-
-.hero__actions {
-  display: flex;
-  gap: 0.7rem;
-  margin-top: 1rem;
-  margin-bottom: 0.6rem;
-}
-
-.hero__note {
-  font-size: 0.8rem;
-  color: #9ca3af;
-}
-
-.hero__card {
-  background: linear-gradient(135deg, #10b981, #22c55e);
-  border-radius: var(--radius-lg);
-  padding: 1.4rem;
-  box-shadow: var(--shadow-soft);
-  color: #022c22;
-}
-
-.hero__card h2 {
-  margin-top: 0.7rem;
-  font-size: 1.4rem;
-  margin-bottom: 0.3rem;
-}
-
-.hero__card p {
-  font-size: 0.9rem;
-  margin-bottom: 1.1rem;
-}
-
-/* Badges */
-.badge {
-  display: inline-block;
-  padding: 0.2rem 0.6rem;
-  border-radius: 999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-.badge--green {
-  background: #ecfdf3;
-  color: #166534;
-}
-
-.badge--purple {
-  background: #eef2ff;
-  color: #4338ca;
-}
-
-.badge--pink {
-  background: #fdf2f8;
-  color: #9d174d;
-}
-
-.badge--blue {
-  background: #eff6ff;
-  color: #1d4ed8;
-}
-
-.badge--orange {
-  background: #fff7ed;
-  color: #c2410c;
-}
-
-/* Main */
-.main {
-  padding: 2rem 0 3rem;
-}
-
-.section {
-  margin-bottom: 2.5rem;
-}
-
-.section__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.2rem;
-}
-
-.section__header h2 {
-  font-size: 1.4rem;
-  margin: 0;
-}
-
-.link-btn {
-  font-size: 0.85rem;
-  color: var(--color-primary-dark);
-  background: none;
-}
-
-/* Cards grid */
-.deals-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.1rem;
-}
-
-.deal-card {
-  background: var(--color-card-bg);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.08);
-  display: flex;
-  flex-direction: column;
-}
-
-.deal-card__image-wrapper {
-  position: relative;
-  overflow: hidden;
-  height: 180px;
-}
-
-.deal-card__image-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.deal-card__favorite {
-  position: absolute;
-  top: 0.55rem;
-  right: 0.55rem;
-  width: 32px;
-  height: 32px;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.75);
-  color: #f9fafb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-}
-
-.deal-card__body {
-  padding: 0.9rem 0.9rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  flex: 1;
-}
-
-.deal-card__title {
-  font-size: 0.98rem;
-  margin: 0;
-}
-
-.deal-card__subtitle {
-  font-size: 0.85rem;
-  color: var(--color-text-muted);
-  margin: 0;
-}
-
-.deal-card__meta {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-}
-
-.deal-card__prices {
-  display: flex;
-  align-items: baseline;
-  gap: 0.4rem;
-  margin-top: 0.35rem;
-  font-size: 0.9rem;
-}
-
-.deal-card__price {
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-.deal-card__old-price {
-  text-decoration: line-through;
-  color: var(--color-text-muted);
-  font-size: 0.8rem;
-}
-
-.deal-card__discount {
-  font-size: 0.8rem;
-  padding: 0.1rem 0.35rem;
-  border-radius: 999px;
-  background: #fee2e2;
-  color: #b91c1c;
-}
-
-/* Newsletter */
-.section--light {
-  background: #e5f7ee;
-  padding: 2rem 0;
-}
-
-.newsletter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.4rem;
-}
-
-.newsletter__info h2 {
-  margin: 0 0 0.3rem;
-}
-
-.newsletter__info p {
-  margin: 0;
-  color: #4b5563;
-  font-size: 0.9rem;
-}
-
-.newsletter__form {
-  display: flex;
-  gap: 0.6rem;
-  flex-wrap: wrap;
-}
-
-.newsletter__form input {
-  border-radius: 999px;
-  border: 1px solid #d1d5db;
-  padding: 0.5rem 0.9rem;
-  min-width: 230px;
-}
-
-/* Footer */
-.footer {
-  background: #020617;
-  color: #9ca3af;
-  padding: 2rem 0 1.5rem;
-  font-size: 0.85rem;
-}
-
-.footer__top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #1f2937;
-}
-
-.footer__column h3,
-.footer__column h4 {
-  color: #e5e7eb;
-  margin-top: 0;
-}
-
-.footer__column ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer__column li {
-  margin-bottom: 0.35rem;
-}
-
-.footer__column a {
-  color: inherit;
-}
-
-.footer__social {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.footer__bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 1rem;
-  gap: 1rem;
-}
-
-.footer__links {
-  display: flex;
-  gap: 1rem;
-}
-
-/* Responsivo */
-@media (max-width: 992px) {
-  .header__inner {
-    flex-wrap: wrap;
-    align-items: flex-start;
-  }
-
-  .hero__inner {
-    grid-template-columns: 1fr;
-  }
-
-  .deals-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .footer__top {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .newsletter {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-@media (max-width: 640px) {
-  .header__actions {
-    display: none;
-  }
-
-  .nav-categories__inner {
-    overflow-x: auto;
-    white-space: nowrap;
-  }
-
-  .deals-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer__top {
-    grid-template-columns: 1fr;
-  }
-
-  .top-banner {
-    flex-direction: column;
-  }
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuponera Perú - Ofertas y Descuentos</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="shortcut icon" href="#" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- BARRA SUPERIOR -->
+  <div class="top-banner">
+    <span>Ofertas especiales por tiempo limitado en Perú</span>
+    <button class="top-banner__btn">Ver promociones</button>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner container">
+      <div class="header__logo">
+        <!-- logo simple de texto, cámbialo luego por una imagen -->
+        <span class="logo-main">Cuponera</span>
+        <span class="logo-country">Perú</span>
+      </div>
+
+      <div class="header__search">
+        <div class="search-input">
+          <span class="search-input__icon">🔍</span>
+          <input type="text" placeholder="Buscar restaurantes, spas, viajes..." />
+        </div>
+      </div>
+
+      <nav class="header__actions">
+        <button class="icon-btn" title="Favoritos">♡</button>
+        <button class="icon-btn" title="Carrito">🛒</button>
+        <button class="btn-outline">Vender cupones</button>
+        <button class="btn-primary">Iniciar sesión</button>
+      </nav>
+    </div>
+
+    <!-- NAV CATEGORÍAS -->
+    <nav class="nav-categories">
+      <div class="container nav-categories__inner">
+        <button class="nav-categories__item nav-categories__item--active">Destacados</button>
+        <button class="nav-categories__item">Restaurantes</button>
+        <button class="nav-categories__item">Belleza & Spa</button>
+        <button class="nav-categories__item">Cosas que hacer</button>
+        <button class="nav-categories__item">Viajes</button>
+        <button class="nav-categories__item">Productos</button>
+        <button class="nav-categories__item">Cupones de comida</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1>Descuentos increíbles cerca de ti</h1>
+        <p>
+          Ahorra hasta un 70% en experiencias, restaurantes, belleza, viajes y mucho más
+          en Lima y todo el Perú.
+        </p>
+        <div class="hero__actions">
+          <button class="btn-primary">Ver ofertas cerca de mí</button>
+          <button class="btn-outline">Explorar todas las categorías</button>
+        </div>
+        <p class="hero__note">Regístrate y recibe cupones exclusivos en tu correo.</p>
+      </div>
+      <div class="hero__card">
+        <span class="badge badge--green">Promo del día</span>
+        <h2>Hasta 60% en restaurantes de Lima</h2>
+        <p>Encuentra menús 2x1, buffets y más en tus lugares favoritos.</p>
+        <button class="btn-light">Ver restaurantes</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN TENDENCIAS -->
+  <main class="main">
+    <section class="section">
+      <div class="container section__header">
+        <h2>Tendencias en Lima</h2>
+        <button class="link-btn">Cambiar ciudad ▾</button>
+      </div>
+
+      <div class="container deals-grid" id="deals-grid">
+        <!-- Las tarjetas se pueden generar también dinámicamente con JS -->
+        <!-- Deal 1 -->
+        <article class="deal-card">
+          <div class="deal-card__image-wrapper">
+            <img src="https://images.pexels.com/photos/1378424/pexels-photo-1378424.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Restaurante en Lima" />
+            <span class="badge badge--purple">Restaurantes</span>
+            <button class="deal-card__favorite">♡</button>
+          </div>
+          <div class="deal-card__body">
+            <h3 class="deal-card__title">Cena para 2 en Miraflores</h3>
+            <p class="deal-card__subtitle">Menú de 3 tiempos + bebida</p>
+            <div class="deal-card__meta">
+              <span>Miraflores, Lima</span>
+              <span>★ 4.7 (320)</span>
+            </div>
+            <div class="deal-card__prices">
+              <span class="deal-card__price">S/ 69.90</span>
+              <span class="deal-card__old-price">S/ 150</span>
+              <span class="deal-card__discount">-53%</span>
+            </div>
+            <button class="btn-secondary">Ver detalle</button>
+          </div>
+        </article>
+
+        <!-- Deal 2 -->
+        <article class="deal-card">
+          <div class="deal-card__image-wrapper">
+            <img src="https://images.pexels.com/photos/3831848/pexels-photo-3831848.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Spa" />
+            <span class="badge badge--pink">Spa & Relax</span>
+            <button class="deal-card__favorite">♡</button>
+          </div>
+          <div class="deal-card__body">
+            <h3 class="deal-card__title">Día de spa completo</h3>
+            <p class="deal-card__subtitle">Masaje, sauna y jacuzzi</p>
+            <div class="deal-card__meta">
+              <span>San Isidro, Lima</span>
+              <span>★ 4.9 (150)</span>
+            </div>
+            <div class="deal-card__prices">
+              <span class="deal-card__price">S/ 99.00</span>
+              <span class="deal-card__old-price">S/ 220</span>
+              <span class="deal-card__discount">-55%</span>
+            </div>
+            <button class="btn-secondary">Ver detalle</button>
+          </div>
+        </article>
+
+        <!-- Deal 3 -->
+        <article class="deal-card">
+          <div class="deal-card__image-wrapper">
+            <img src="https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Viajes" />
+            <span class="badge badge--blue">Viajes</span>
+            <button class="deal-card__favorite">♡</button>
+          </div>
+          <div class="deal-card__body">
+            <h3 class="deal-card__title">Escapada a Cusco 3D/2N</h3>
+            <p class="deal-card__subtitle">Hotel + tour guiado</p>
+            <div class="deal-card__meta">
+              <span>Cusco, Perú</span>
+              <span>★ 4.8 (210)</span>
+            </div>
+            <div class="deal-card__prices">
+              <span class="deal-card__price">S/ 399</span>
+              <span class="deal-card__old-price">S/ 650</span>
+              <span class="deal-card__discount">-39%</span>
+            </div>
+            <button class="btn-secondary">Ver detalle</button>
+          </div>
+        </article>
+
+        <!-- Deal 4 -->
+        <article class="deal-card">
+          <div class="deal-card__image-wrapper">
+            <img src="https://images.pexels.com/photos/3046632/pexels-photo-3046632.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Diversión" />
+            <span class="badge badge--orange">Cosas que hacer</span>
+            <button class="deal-card__favorite">♡</button>
+          </div>
+          <div class="deal-card__body">
+            <h3 class="deal-card__title">Parque de diversiones</h3>
+            <p class="deal-card__subtitle">Entrada ilimitada todo el día</p>
+            <div class="deal-card__meta">
+              <span>La Molina, Lima</span>
+              <span>★ 4.6 (98)</span>
+            </div>
+            <div class="deal-card__prices">
+              <span class="deal-card__price">S/ 35</span>
+              <span class="deal-card__old-price">S/ 70</span>
+              <span class="deal-card__discount">-50%</span>
+            </div>
+            <button class="btn-secondary">Ver detalle</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECCIÓN NEWSLETTER -->
+    <section class="section section--light">
+      <div class="container newsletter">
+        <div class="newsletter__info">
+          <h2>Recibe ofertas en tu correo</h2>
+          <p>Enterate primero de cupones exclusivos en Lima y todo el Perú.</p>
+        </div>
+        <form class="newsletter__form">
+          <input type="email" placeholder="Tu correo electrónico" required />
+          <button type="submit" class="btn-primary">Suscribirme</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__column">
+        <h3>Cuponera Perú</h3>
+        <p>
+          Plataforma peruana para encontrar descuentos en restaurantes, experiencias,
+          productos y más.
+        </p>
+      </div>
+      <div class="footer__column">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Centro de ayuda</a></li>
+          <li><a href="#">Cómo funcionan los cupones</a></li>
+          <li><a href="#">Cambios y devoluciones</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4>Para negocios</h4>
+        <ul>
+          <li><a href="#">Vender en Cuponera</a></li>
+          <li><a href="#">Portal de socios</a></li>
+          <li><a href="#">Publicidad</a></li>
+        </ul>
+      </div>
+      <div class="footer__column">
+        <h4>Síguenos</h4>
+        <div class="footer__social">
+          <a href="#">Facebook</a>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+        </div>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2025 Cuponera Perú. Todos los derechos reservados.</span>
+      <div class="footer__links">
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Política de privacidad</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
